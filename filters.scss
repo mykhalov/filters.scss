@@ -1,18 +1,24 @@
-@mixin filter-grayscale($amount: 100%) {
+@mixin filter-grayscale($amount: 1) {
     -webkit-filter: grayscale($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22grayscale%22%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%22#{0.2126+0.7874*(1-$amount)} #{(0.7152- 0.7152*(1-$amount))} #{0.0722- 0.0722*(1-$amount)} 0 0,#{0.2126- 0.2126*(1-$amount)} #{0.7152+0.2848*(1-$amount)} #{0.0722- 0.0722*(1-$amount)} 0 0,#{0.2126- 0.2126*(1-$amount)} #{0.7152- 0.7152*(1-$amount)} #{0.0722+0.9278*(1-$amount)} 0 0,0 0 0 1 0%22/%3E%3C/filter%3E%3C/svg%3E#grayscale");
 }
 
-@mixin filter-sepia($amount: 100%) {
+@mixin filter-sepia($amount: 1) {
     -webkit-filter: sepia($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22sepia%22%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%22#{0.393+0.607*(1-$amount)} #{0.769- 0.769*(1-$amount)} #{0.189- 0.189*(1-$amount)} 0 0,#{0.349- 0.349*(1-$amount)} #{0.686+0.314*(1-$amount)} #{0.168- 0.168*(1-$amount)} 0 0,#{0.272- 0.272*(1-$amount)} #{0.534- 0.534*(1-$amount)} #{0.131+0.869*(1-$amount)} 0 0,0 0 0 1 0%22/%3E%3C/filter%3E%3C/svg%3E#sepia");
 }
 
-@mixin filter-saturate($amount: 100%) {
+@mixin filter-saturate($amount: 1) {
     -webkit-filter: saturate($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22desaturate%22%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%22#{1-$amount}%22/%3E%3C/filter%3E%3C/svg%3E#desaturate");
 }
 
@@ -22,27 +28,35 @@
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22hue-rotate%22%3E%3CfeColorMatrix%20type%3D%22hueRotate%22%20values%3D%22#{$angle}%22/%3E%3C/filter%3E%3C/svg%3E#hue-rotate");
 }
 
-@mixin filter-invert($amount: 100%) {
+@mixin filter-invert($amount: 1) {
     -webkit-filter: invert($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22invert%22%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type%3D%22table%22%20tableValues%3D%22#{$amount} #{1-$amount}%22/%3E%3CfeFuncG%20type%3D%22table%22%20tableValues%3D%22#{$amount} #{1-$amount}%22/%3E%3CfeFuncB%20type%3D%22table%22%20tableValues%3D%22#{$amount} #{1-$amount}%22/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/svg%3E#invert");
 }
 
-@mixin filter-opacity($amount: 100%) {
+@mixin filter-opacity($amount: 1) {
     -webkit-filter: opacity($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22opacity%22%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D%22table%22%20tableValues%3D%220 #{$amount}%22/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/svg%3E#opacity");
 }
 
-@mixin filter-brightness($amount: 100%) {
+@mixin filter-brightness($amount: 1) {
     -webkit-filter: brightness($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22brightness%22%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type%3D%22linear%22%20slope%3D%22#{$amount}%22/%3E%3CfeFuncG%20type%3D%22linear%22%20slope%3D%22#{$amount}%22/%3E%3CfeFuncB%20type%3D%22linear%22%20slope%3D%22#{$amount}%22/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/svg%3E#brightness");
 }
 
-@mixin filter-contrast($amount: 100%) {
+@mixin filter-contrast($amount: 1) {
     -webkit-filter: contrast($amount);
-    $amount: $amount / 100%;
+    @if (unit($amount) == "%") {
+        $amount: $amount / 100%;
+    }
     filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22contrast%22%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type%3D%22linear%22%20slope%3D%22#{$amount}%22%20intercept%3D%22#{-0.5*$amount+0.5}%22/%3E%3CfeFuncG%20type%3D%22linear%22%20slope%3D%22#{$amount}%22%20intercept%3D%22#{-0.5*$amount+0.5}%22/%3E%3CfeFuncB%20type%3D%22linear%22%20slope%3D%22#{$amount}%22%20intercept%3D%22#{-0.5*$amount+0.5}%22/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/svg%3E#contrast");
 }
 
