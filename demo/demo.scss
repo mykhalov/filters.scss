@@ -1,47 +1,47 @@
 @import "../filters.scss";
 
 .none {
-    @include filter-none();
+  @include filter-none();
 }
 
 .grayscale {
-    @include filter-grayscale(50%);
+  @include filter-grayscale(50%);
 }
 
 .sepia {
-    @include filter-sepia(50%);
+  @include filter-sepia(50%);
 }
 
 .saturate {
-    @include filter-saturate(50%);
+  @include filter-saturate(50%);
 }
 
 .hue-rotate {
-    @include filter-hue-rotate(180deg);
+  @include filter-hue-rotate(180deg);
 }
 
 .invert {
-    @include filter-invert();
+  @include filter-invert();
 }
 
 .opacity {
-    @include filter-opacity(50%);
+  @include filter-opacity(50%);
 }
 
 .brightness {
-    @include filter-brightness(50%);
+  @include filter-brightness(50%);
 }
 
 .contrast {
-    @include filter-contrast(25%);
+  @include filter-contrast(25%);
 }
 
 .blur {
-    @include filter-blur(2px);
+  @include filter-blur(2px);
 }
 
 .drop-shadow {
-    @include filter-drop-shadow(10px 10px 2px rgba(127, 127, 127, 0.5));
+  @include filter-drop-shadow(10px 10px 2px rgba(127, 127, 127, 0.5));
 }
 
 body {
