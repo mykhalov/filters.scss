@@ -1,3 +1,8 @@
+@mixin filter-none() {
+    -webkit-filter: none;
+    filter: none;
+}
+
 @mixin filter-grayscale($amount: 1) {
     -webkit-filter: grayscale($amount);
     @if (unit($amount) == "%") {

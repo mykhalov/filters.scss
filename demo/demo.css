@@ -1,3 +1,7 @@
+.none {
+  -webkit-filter: none;
+  filter: none; }
+
 .grayscale {
   -webkit-filter: grayscale(50%);
   filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22grayscale%22%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.6063 0.3576 0.0361 0 0,0.1063 0.8576 0.0361 0 0,0.1063 0.3576 0.5361 0 0,0 0 0 1 0%22/%3E%3C/filter%3E%3C/svg%3E#grayscale"); }
@@ -15,7 +19,7 @@
   filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22hue-rotate%22%3E%3CfeColorMatrix%20type%3D%22hueRotate%22%20values%3D%22180%22/%3E%3C/filter%3E%3C/svg%3E#hue-rotate"); }
 
 .invert {
-  -webkit-filter: invert(100%);
+  -webkit-filter: invert(1);
   filter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22invert%22%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type%3D%22table%22%20tableValues%3D%221 0%22/%3E%3CfeFuncG%20type%3D%22table%22%20tableValues%3D%221 0%22/%3E%3CfeFuncB%20type%3D%22table%22%20tableValues%3D%221 0%22/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/svg%3E#invert"); }
 
 .opacity {

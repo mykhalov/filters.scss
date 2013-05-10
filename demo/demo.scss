@@ -1,5 +1,9 @@
 @import "../filters.scss";
 
+.none {
+    @include filter-none();
+}
+
 .grayscale {
     @include filter-grayscale(50%);
 }
